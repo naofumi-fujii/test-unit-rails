@@ -30,7 +30,8 @@ module Rails
         $LOAD_PATH << Rails::Command.root.join("test").to_s
 
         ARGV.unshift("--default-test-path=test")
-        exit(Test::Unit::AutoRunner.run(true))
+        p res = Test::Unit::AutoRunner.run(true)
+        exit(res)
       end
     end
   end
